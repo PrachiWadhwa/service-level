@@ -18,11 +18,11 @@ resource "newrelic_service_level" "myservicelevelteraf"{
     }
 
     objective {
-        target = 10.00
+        target = each.value.target
         time_window {
             rolling {
-                count = 7
-                unit = "DAY"
+                count = each.value.count
+                unit = each.value.unit
             }
         }
     }

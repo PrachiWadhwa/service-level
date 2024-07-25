@@ -1,42 +1,42 @@
 resource "newrelic_alert_policy" "terraformmypolicy" {
-  name = "myfirstpolicy"
+  name =  var.mypolicy_name
 }
 
 resource "newrelic_nrql_alert_condition" "istcondition" {
   for_each                       = var.alert_condition
   account_id                     =  var.account_id
   policy_id                      = newrelic_alert_policy.terraformmypolicy.id
-  type                           = "static"
+  type                           = each.value.type
   name                           = each.value.name
   description                    = each.value.description
-  runbook_url                    = "https://www.example.com"
-  enabled                        = true
-  violation_time_limit_seconds   = 300
-  fill_option                    = "static"
-  fill_value                     = 1.0
-  aggregation_window             = 60
-  aggregation_method             = "event_flow"
-  aggregation_delay              = 120
-  expiration_duration            = 120
-  open_violation_on_expiration   = true
-  close_violations_on_expiration = true
-  slide_by                       = 30
-
+  runbook_url                    = each.value.runbook_url
+  enabled                        = each.value.enabled
+  violation_time_limit_seconds   = each.value.violation_time_limit_seconds
+  fill_option                    = each.value.fill_option
+  fill_value                     = each.value.fill_value
+  aggregation_window             = each.value.aggregation_window
+  aggregation_method             = each.value.aggregation_method
+  aggregation_delay              = each.value.aggregation_delay
+  expiration_duration            = each.value.expiration_duration
+  open_violation_on_expiration   = each.value.open_violation_on_expiration
+  close_violations_on_expiration = each.value.close_violations_on_expiration
+  slide_by                       = each.value.slide_by
+  
   nrql {
     query = each.value.querry
   }
-
+  
   critical {
-    operator              = "above"
-    threshold             = 2
-    threshold_duration    = 60
-    threshold_occurrences = "ALL"
+    operator              = each.value.critical_operator
+    threshold             = each.value.critical_threshold
+    threshold_duration    = each.value.critical_threshold_duration
+    threshold_occurrences = each.value.critical_threshold_occurrences
   }
 
   warning {
-    operator              = "above"
-    threshold             = "1"
-    threshold_duration    = "60"
-    threshold_occurrences = "ALL"
+    operator              = each.value.warning_operator
+    threshold             = each.value.warning_threshold
+    threshold_duration    = each.value.warning_threshold_duration
+    threshold_occurrences = each.value.warning_threshold_occurrences
   }
 }

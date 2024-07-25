@@ -5,6 +5,9 @@ variable "newrelic_service_level" {
         guid = string
         from= string
         where= string
+        target=number
+        count=number
+        unit=string
         
     }))
   

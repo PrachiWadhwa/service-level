@@ -4,6 +4,7 @@ module "alert_policy" {
   account_id =  var.account_id
   api_key =  var.api_key
   region =  var.region
+  mypolicy_name=  var.mypolicy_name 
   
 }
 module "servicelevels" {
@@ -12,4 +13,5 @@ module "servicelevels" {
   account_id =  var.account_id
   api_key =  var.api_key
   region =  var.region
+  
 }
