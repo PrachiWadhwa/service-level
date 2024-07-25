@@ -140,11 +140,7 @@ alert_condition = {
     
   }
 }
-
-
 account_id = 4438259
 api_key = "NRAK-VRXRZURE3KIF089GIFYW7GSSJGV"
 region = "EU"
-
-
-  mypolicy_name ="firstpolicy"
+mypolicy_name ="firstpolicy"
