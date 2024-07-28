@@ -40,11 +40,16 @@ variable "newrelic_service_level" {
         name = string
         description = string
         guid = string
+        from_valid= string
+        where_valid=string 
         from = string
         where = string
+        from_bad= string
+        where_bad=string
         target=number
         count=number
         unit=string
+        # flag=number
     }))
   
 }
