@@ -6,6 +6,7 @@ resource "newrelic_service_level" "myservicelevelteraf"{
     description = each.value.description
     
     events {
+        
         account_id = var.account_id
         valid_events {
             from = each.value.from_valid
@@ -14,16 +15,17 @@ resource "newrelic_service_level" "myservicelevelteraf"{
         }
         
         good_events {
-           
+            
             from = each.value.from
             where = each.value.where
            
         }
-         bad_events {
-            from = each.value.from_bad
-            where = each.value.where_bad
+        #  bad_events {
+            
+        #     from = each.value.from_bad
+        #     where = each.value.where_bad
            
-        }
+        # }
     }
 
     objective {

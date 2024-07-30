@@ -65,3 +65,38 @@ variable "region" {
   type = string
   
 }
+
+variable "destination" {
+  type = map(object({
+    name  = string
+    type  = string
+    key   = string
+    value = string
+  }))
+}
+variable "channel" {
+  type = map(object({
+    name           = string
+    type           = string
+    product          = string
+    key_subject    = string
+    key_subject_value =string
+    key_detail        =string
+    key_detail_value  =string
+   
+  }))
+
+}
+
+
+variable "workflow" {
+  type=map(object({
+  name                  = string
+  muting_rules_handling = string
+  name_Issue= string
+  type = string
+  attribute = string
+  operator  = string
+  }))
+
+}
