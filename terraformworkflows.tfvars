@@ -1,7 +1,7 @@
   
   workflow = {
-    worflow1={
-  name                  = "Sample Workflow"
+    worflow100={
+  name                  = "SampleWorkflow"
   muting_rules_handling = "NOTIFY_ALL_ISSUES"
   name_Issue= "Issue Filter"
   type = "FILTER"

@@ -48,10 +48,17 @@ module "workflow" {
 
 
 }
-module "dashboard"{
-  source ="./dashboard"
-  dashboard= var.dashboard
+module "dash"{
+  source ="./dash"
   account_id =  var.account_id
   api_key =  var.api_key
   region =  var.region
+  dashboard_name = var.dashboard_name
+  permissions=var.permissions
+  page_name = var.page_name
+  billboard = var.billboard
+  markdown = var.markdown
+  line = var.line
+  table=var.table
+  bar=var.bar
 }
