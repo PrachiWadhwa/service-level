@@ -14,6 +14,6 @@ resource "newrelic_workflow" "sample_workflow" {
   }
 
   destination {
-    channel_id = var.channel_id
+    channel_id =  var.channel_id
   }
 }

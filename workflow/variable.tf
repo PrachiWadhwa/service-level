@@ -6,6 +6,7 @@ variable "workflow" {
   type = string
   attribute = string
   operator  = string
+ 
   }))
 
 }

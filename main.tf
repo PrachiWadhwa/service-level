@@ -46,4 +46,12 @@ module "workflow" {
   api_key =  var.api_key
   region =  var.region
 
+
+}
+module "dashboard"{
+  source ="./dashboard"
+  dashboard= var.dashboard
+  account_id =  var.account_id
+  api_key =  var.api_key
+  region =  var.region
 }
