@@ -7,8 +7,8 @@ newrelic_service_level = {
     guid              = "NDQzODI1OXxBUE18QVBQTElDQVRJT058NDg4OTcwNjg4"
     from_valid   = "PageView"
     where_valid = "appName = 'react1'" 
-    from              = "Transaction"
-    where             = "appName = 'mylink'"
+    from              = null
+    where             = null
     target            = 10
     count             = 28
     unit              = "DAY"
@@ -27,8 +27,8 @@ newrelic_service_level = {
     target            = 30
     count             = 7
     unit              = "DAY"
-    from_bad          = "PageView"
-    where_bad         = "appName = 'react1'"
+    from_bad          = null
+    where_bad         = null
 
   }
   level3 = {
@@ -42,8 +42,8 @@ newrelic_service_level = {
     target            = 30
     count             = 7
     unit              = "DAY"
-    from_bad          = "SynthetiCheck"
-    where_bad         = "monitorName = 'firstpingmonitor'"
+    from_bad          = null
+    where_bad         = null
 
   }
   level4 = {
@@ -57,8 +57,8 @@ newrelic_service_level = {
     target            = 20
     count             = 1
     unit              = "DAY"
-    from_bad          = "SynthetiCheck"
-    where_bad         = "monitorName = 'pagelink'"
+    from_bad          = null
+    where_bad         = null
   }
   level5 = {
     name              = "level5"
@@ -71,8 +71,8 @@ newrelic_service_level = {
     target            = 10
     count             = 7
     unit              = "DAY"
-    from_bad          = "ProcessSample"
-    where_bad         = "hostName = 'DESKTOP-Q5BUHLN'"
+    from_bad          = null
+    where_bad         = null
 
   }
 
@@ -84,6 +84,3 @@ newrelic_service_level = {
 account_id = 4438259
 api_key    = "NRAK-VRXRZURE3KIF089GIFYW7GSSJGV"
 region     = "EU"
-
-
-
