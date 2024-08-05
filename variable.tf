@@ -275,3 +275,12 @@ variable "permissions" {
 variable "page_name" {
   type = string
 }
+variable "workload"{
+    type= map(object({
+        name= string
+        entity_guids= string
+        query=string
+        
+    }))
+   
+}

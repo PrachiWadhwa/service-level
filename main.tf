@@ -62,3 +62,11 @@ module "dash"{
   table=var.table
   bar=var.bar
 }
+module "workload" {
+   source ="./workload"
+  account_id =  var.account_id
+  api_key =  var.api_key
+  region =  var.region
+  workload = var.workload
+  
+}
