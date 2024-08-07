@@ -284,3 +284,13 @@ variable "workload"{
     }))
    
 }
+variable  entity{
+   type= map(object({
+    guid= string
+    key= string
+    values=list(string)
+    key2= string
+    value2= list(string)
+
+})) 
+}
