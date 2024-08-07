@@ -85,3 +85,12 @@ module "drop_rule"{
   region =  var.region
  drop_rule = var.drop_rule
 }
+module "log"{
+  source ="./log"
+  account_id =  var.account_id
+  api_key =  var.api_key
+  region =  var.region
+ newrelic_log_parsing_rule = var.newrelic_log_parsing_rule
+
+}
+
