@@ -78,3 +78,10 @@ module "tags"{
   entity= var.entity
 
 }
+module "drop_rule"{
+  source ="./drop_rule"
+  account_id =  var.account_id
+  api_key =  var.api_key
+  region =  var.region
+ drop_rule = var.drop_rule
+}

@@ -294,3 +294,11 @@ variable  entity{
 
 })) 
 }
+
+variable "drop_rule" {
+  type = map(object({
+    description = string
+    action      = string
+    nrql        = string
+  }))
+}
