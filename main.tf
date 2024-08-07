@@ -1,96 +1,108 @@
 module "alert_policy" {
-  source = "./alert module"
-  alert_condition =  var.alert_condition
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
-  mypolicy_name=  var.mypolicy_name 
-  
+  source          = "./alert module"
+  alert_condition = var.alert_condition
+  account_id      = var.account_id
+  api_key         = var.api_key
+  region          = var.region
+  mypolicy_name   = var.mypolicy_name
+
 }
 module "servicelevels" {
-  source = "./sla-module"
-  newrelic_service_level = var.newrelic_service_level 
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
-  
+  source                 = "./sla-module"
+  newrelic_service_level = var.newrelic_service_level
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
+
 }
-module "destination"{
+module "destination" {
 
   source = "./destination"
 
-  destination= var.destination
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
+  destination = var.destination
+  account_id  = var.account_id
+  api_key     = var.api_key
+  region      = var.region
 
 }
-module "channel"{
+module "channel" {
 
   source = "./channel"
 
- channel=  var.channel
-  destination_id=module.destination.destination_id
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
+  channel        = var.channel
+  destination_id = module.destination.destination_id
+  account_id     = var.account_id
+  api_key        = var.api_key
+  region         = var.region
 
 }
 module "workflow" {
 
-  source = "./workflow"
-  workflow =  var.workflow
-  channel_id =module.channel.channel_id
-  policy_id = module.alert_policy.policy_id
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
+  source     = "./workflow"
+  workflow   = var.workflow
+  channel_id = module.channel.channel_id
+  policy_id  = module.alert_policy.policy_id
+  account_id = var.account_id
+  api_key    = var.api_key
+  region     = var.region
 
 
 }
-module "dash"{
-  source ="./dash"
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
+module "dash" {
+  source         = "./dash"
+  account_id     = var.account_id
+  api_key        = var.api_key
+  region         = var.region
   dashboard_name = var.dashboard_name
-  permissions=var.permissions
-  page_name = var.page_name
-  billboard = var.billboard
-  markdown = var.markdown
-  line = var.line
-  table=var.table
-  bar=var.bar
+  permissions    = var.permissions
+  page_name      = var.page_name
+  billboard      = var.billboard
+  markdown       = var.markdown
+  line           = var.line
+  table          = var.table
+  bar            = var.bar
 }
 module "workload" {
-   source ="./workload"
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
-  workload = var.workload
-  
-}
-module "tags"{
-  source ="./tags"
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
-  entity= var.entity
+  source     = "./workload"
+  account_id = var.account_id
+  api_key    = var.api_key
+  region     = var.region
+  workload   = var.workload
 
 }
-module "drop_rule"{
-  source ="./drop_rule"
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
- drop_rule = var.drop_rule
-}
-module "log"{
-  source ="./log"
-  account_id =  var.account_id
-  api_key =  var.api_key
-  region =  var.region
- newrelic_log_parsing_rule = var.newrelic_log_parsing_rule
+module "tags" {
+  source     = "./tags"
+  account_id = var.account_id
+  api_key    = var.api_key
+  region     = var.region
+  entity     = var.entity
 
 }
+module "drop_rule" {
+  source     = "./drop_rule"
+  account_id = var.account_id
+  api_key    = var.api_key
+  region     = var.region
+  drop_rule  = var.drop_rule
+}
+module "log" {
+  source                    = "./log"
+  account_id                = var.account_id
+  api_key                   = var.api_key
+  region                    = var.region
+  newrelic_log_parsing_rule = var.newrelic_log_parsing_rule
 
+}
+module "synthetic" {
+  source                 = "./synthetic"
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
+  cert                   = var.cert
+  api                    = var.api
+  broken                 = var.broken
+  stepm                  = var.stepm
+  script                 = var.script
+  simple_browser_monitor = var.simple_browser_monitor
+  ping                   = var.ping
+}
