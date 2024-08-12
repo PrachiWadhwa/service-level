@@ -93,16 +93,59 @@ module "log" {
   newrelic_log_parsing_rule = var.newrelic_log_parsing_rule
 
 }
-module "synthetic" {
-  source                 = "./synthetic"
+
+module "step" {
+  source                 = "./step"
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
+  stepm                  = var.stepm
+}
+
+module "api" {
+  source                 = "./api"
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
+  api                    = var.api
+}
+module "certificate" {
+  source                 = "./certificate"
   account_id             = var.account_id
   api_key                = var.api_key
   region                 = var.region
   cert                   = var.cert
-  api                    = var.api
-  broken                 = var.broken
-  stepm                  = var.stepm
-  script                 = var.script
+}
+
+module "broken" {
+  source                 = "./broken"
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
+ broken                 = var.broken
+}
+module "browser" {
+  source                 = "./browser"
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
   simple_browser_monitor = var.simple_browser_monitor
+
+}
+module "ping-synthetic" {
+  source                 = "./ping-synthetic"
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
   ping                   = var.ping
+}
+
+
+module "script_synthetic" {
+  source                 = "./script_synthetic"
+  account_id             = var.account_id
+  api_key                = var.api_key
+  region                 = var.region
+  script                 = var.script
+ 
 }

@@ -4,21 +4,21 @@ api_key    = "NRAK-VRXRZURE3KIF089GIFYW7GSSJGV"
 region     = "EU"
 broken = {
   1 = {
-    name             = "Sample Broken Links Monitor"
+    name             = "Sample Broken Links Monitor1"
     uri              = "https://www.one.example.com"
     locations_public = "AP_SOUTH_1"
-    period           = "EVERY_6_HOURS"
+    period           = "EVERY_DAY"
     status           = "ENABLED"
 
   }
 }
 cert = {
   1 = {
-    name                   = "Sample Cert Check Monitor"
+    name                   = "Sample Cert Check Monitor1"
     domain                 = "www.example.com"
     locations_public       = "AP_SOUTH_1"
     certificate_expiration = "10"
-    period                 = "EVERY_6_HOURS"
+    period                 = "EVERY_DAY"
     status                 = "ENABLED"
 
   }
@@ -26,10 +26,10 @@ cert = {
 api = {
   1 = {
     status           = "ENABLED"
-    name             = "script_ api_monitor"
+    name             = "script_ api_monitor1"
     type             = "SCRIPT_API"
     locations_public = ["AP_SOUTH_1", "AP_EAST_1"]
-    period           = "EVERY_6_HOURS"
+    period           = "EVERY_DAY"
     script           = "console.log('it works!')"
     script_language  = "JAVASCRIPT"
   }
@@ -38,22 +38,22 @@ api = {
 script = {
   1 = {
     status                                  = "ENABLED"
-    name                                    = "script_monitor_script"
+    name                                    = "script_monitor_script1"
     type                                    = "SCRIPT_BROWSER"
     locations_public                        = ["AP_SOUTH_1", "AP_EAST_1"]
     period                                  = "EVERY_DAY"
     enable_screenshot_on_failure_and_script = false
-    script                                  = "$browser.get('https://one.newrelic.com')"
+    script                                  = "./script1.js"
     script_language                         = "JAVASCRIPT"
 
   }
 }
 stepm = {
   1 = {
-    name                                    = "Sample Step Monitor"
+    name                                    = "Sample Step Monitor1"
     enable_screenshot_on_failure_and_script = true
     locations_public                        = ["US_EAST_1", "US_EAST_2"]
-    period                                  = "EVERY_6_HOURS"
+    period                                  = "EVERY_DAY"
     status                                  = "ENABLED"
     ordinal                                 = 0
     type                                    = "NAVIGATE"
@@ -66,7 +66,7 @@ stepm = {
 simple_browser_monitor = {
   "i" = {
     status           = "ENABLED"
-    name             = "simple_browser_monitor"
+    name             = "simple_browser_monitor1"
     period           = "EVERY_DAY"
     uri              = "https://www.one.newrelic.com"
     type             = "BROWSER"
@@ -77,7 +77,7 @@ simple_browser_monitor = {
 ping = {
   "1" = {
     status           = "ENABLED"
-    name             = "ping"
+    name             = "pingda2"
     period           = "EVERY_DAY"
     uri              = "https://www.one.newrelic.com"
     type             = "SIMPLE"

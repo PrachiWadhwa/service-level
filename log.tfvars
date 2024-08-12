@@ -5,7 +5,7 @@ region     = "EU"
 newrelic_log_parsing_rule={
 
     1={
-   name        = "log_parse_rule"
+   name        = "log_parse_rule1"
     attribute   = "message"
     enabled     = true
     grok        = "sampleattribute='%%{NUMBER:test:int}'"
