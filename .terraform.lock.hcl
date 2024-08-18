@@ -5,7 +5,7 @@ provider "registry.terraform.io/newrelic/newrelic" {
   version     = "3.40.1"
   constraints = "3.40.1"
   hashes = [
-    "h1:4DNIL6616lW+PHEXaGyrSh+hBASv6/mgU0XRpEbrM7I=",
+    "h1:BakNspgRuUrrevwRYNRjQaFoaEB8LcVIO4ZR0rIIaNA=",
     "zh:12224cf9ba6f43e2465be737c132ef830170e59ef696e0d9a2fef3c9fa4be5f8",
     "zh:192c6a24dee80c8240732fc3b14aa679c1d85a21c661e355757f306a1ea12cda",
     "zh:1ec97ba469490d6caf24916b6d80604bf9b296ba65672ff1db918a5fd1e43fc4",
